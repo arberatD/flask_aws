@@ -9,16 +9,15 @@ phases:
       - pip install -r requirements.txt
 
   build:
-  commands:
-    - echo Build started on `date`
-    - echo Building the Flask app...
-    - |
-      python app.py &
-      APP_PID=$!
-      sleep 5  # Give the server time to start
-      curl --fail http://127.0.0.1:5000 || { echo 'Health check failed'; kill $APP_PID; exit 1; }
-      kill $APP_PID
-
+    commands:
+      - echo Build started on `date`
+      - echo Building the Flask app...
+      - |
+          python app.py &
+          APP_PID=$!
+          sleep 5  # Give the server time to start
+          curl --fail http://127.0.0.1:5000 || { echo 'Health check failed'; kill $APP_PID; exit 1; }
+          kill $APP_PID
 
   post_build:
     commands:
