@@ -20,3 +20,9 @@ variable "github_branch" {
   type        = string
   default     = "main"
 }
+
+variable "github_token" {
+  description = "GitHub token"
+  type        = string
+  
+}
