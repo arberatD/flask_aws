@@ -12,10 +12,13 @@ phases:
     commands:
       - echo Build started on `date`
       - echo Building the Flask app...
+      - python app.py
 
   post_build:
     commands:
       - echo Build completed on `date`
+      - echo Running unit tests...
+      - python -m unittest test_app.py
 
 artifacts:
   files:
