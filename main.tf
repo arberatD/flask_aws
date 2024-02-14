@@ -2,7 +2,7 @@ provider "aws" {
   region = var.aws_region
 }
 
-# need to connect manually to github
+# need to connect manually to githubb
 # https://docs.aws.amazon.com/dtconsole/latest/userguide/connections-update.html
 
 resource "aws_codestarconnections_connection" "github" {
